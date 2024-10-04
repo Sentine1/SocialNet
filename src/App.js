@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
+import Header from './components/Header.jsx'
 
 function App() {
   return (
     <div className='app-wrapper'>
-	<header className='header'>
-	<img src='https://cdn.pixabay.com/photo/2021/09/13/08/18/blue-flower-6620619_1280.jpg' alt="logo"/>
-	</header>
+	<Header />
 	<nav className='Menu'>
 		
 	<div>
