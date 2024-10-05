@@ -1,0 +1,10 @@
+.Content {
+	grid-area: c;
+		background-color: blue;
+}
+.Content img{
+	width: 500px;
+}
+.Items{
+	color: gold;
+}
