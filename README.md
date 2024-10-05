@@ -5,6 +5,7 @@ This is my homework for learning react
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+After git clone use command npm install for download modules
 
 ## Available Scripts
 
