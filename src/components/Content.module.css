@@ -1,10 +1,12 @@
 .Content {
-	grid-area: c;
-		background-color: blue;
+    grid-area: c;
+    background-color: blue;
 }
-.Content img{
-	width: 500px;
+
+.Content img {
+    width: 500px;
 }
-.Items{
-	color: gold;
+
+.Items {
+    color: gold;
 }

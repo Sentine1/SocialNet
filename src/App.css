@@ -1,27 +1,28 @@
 .app-wrapper {
-   display: grid;
-   
-   grid-template-areas:
+    display: grid;
+
+    grid-template-areas:
    "h h"
    "m c";
-	grid-template-rows: 60px 2fr;
+    grid-template-rows: 60px 2fr;
     grid-template-columns: 2fr  10fr;
 }
 
-.header{
-	grid-area: h;
-	background-color: green;
-}
-.header img{
-	width: 50px;
+.header {
+    grid-area: h;
+    background-color: green;
 }
 
-.Menu{
-	grid-area: m;
-		background-color: red;
+.header img {
+    width: 50px;
+}
+
+.Menu {
+    grid-area: m;
+    background-color: red;
 }
 
 .Content {
-	grid-area: c;
-		background-color: blue;
+    grid-area: c;
+    background-color: blue;
 }

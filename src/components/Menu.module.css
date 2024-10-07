@@ -1,9 +1,9 @@
-.Menu{
-	grid-area: m;
-		background-color: red;
-	text-align: center;
+.Menu {
+    grid-area: m;
+    background-color: red;
+    text-align: center;
 }
 
-.Items{
-	color: silver;
+.Items {
+    color: silver;
 }
