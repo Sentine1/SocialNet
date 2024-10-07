@@ -13,9 +13,9 @@ function SelfPosts() {
                     <button>Delete</button>
                 </div>
 
-                <Post/>
-                <Post/>
-                <Post/>
+                <Post message="Test message 1" like={40}/>
+                <Post message="Test message 2" like={20}/>
+                <Post message="Test message 3" like={60}/>
             </div>
         </div>
     </div>

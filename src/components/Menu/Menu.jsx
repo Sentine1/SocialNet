@@ -8,7 +8,7 @@ return <nav className={module.Menu}>
 		Profile
 	</div>
 	<div className={module.Items}>
-		Messages
+		News
 	</div>
 	<div className={module.Items}>
 		Friends
@@ -20,7 +20,7 @@ return <nav className={module.Menu}>
 		Audios
 	</div>
 	<div className={module.Items}>
-		Imges
+		Messages
 	</div>
 	<br/>
 	<br/>

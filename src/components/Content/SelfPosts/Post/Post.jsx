@@ -1,13 +1,13 @@
 import React from 'react';
 import module from './Post.module.css'
 
-function Post() {
+function Post(props) {
     return <div className={module.Items}>
         <img src="Ava.jpg" alt="Avatar"/>
-        Msgs
+        {props.message}
         <div>
             <span>Like</span>
-            <span> </span>
+            <span> {props.like} </span>
             <span>Dislike</span>
         </div>
 
