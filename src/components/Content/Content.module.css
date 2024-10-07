@@ -1,0 +1,16 @@
+.Content {
+    grid-area: c;
+    background-color: blue;
+}
+
+.Content img {
+    width: 500px;
+}
+
+.Profile{
+}
+.Profile img{
+    width: 80px;
+    height: 80px;
+    border-radius: 30%;    
+}

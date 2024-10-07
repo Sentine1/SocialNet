@@ -24,7 +24,7 @@ return <nav className={module.Menu}>
 	</div>
 	<br/>
 	<br/>
-	<div>
+	<div className={`${module.Items} ${module.Active}`}>
 		Settings
 	</div>
 </nav>

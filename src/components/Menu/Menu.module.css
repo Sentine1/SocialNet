@@ -7,3 +7,7 @@
 .Items {
     color: silver;
 }
+
+.Items.Active{
+    color: antiquewhite;
+}
