@@ -3,7 +3,7 @@ import module from './Content.module.css'
 import SelfPosts from "./SelfPosts/SelfPosts";
 
 function Content() {
-    return <div className={module.Content}>
+    return <div>
         <div className={module.Img}>
             <img src="dragonball.png" alt="main page"/>
         </div>

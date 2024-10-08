@@ -1,9 +1,10 @@
-.Dialogs{
+.Friends{
     display: grid;
+    background-color: aqua;
 
     grid-template-areas:
-   "dm dc"
-   "dm dc";
+   "m c"
+   "m с";
     grid-template-rows: 20px 10fr;
     grid-template-columns: 1fr  10fr;
 }

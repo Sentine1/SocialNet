@@ -1,9 +1,10 @@
 .Dialogs{
     display: grid;
+    background-color: bisque;
 
     grid-template-areas:
    "dm dc"
    "dm dc";
     grid-template-rows: 20px 10fr;
-    grid-template-columns: 1fr  10fr;
+    grid-template-columns: 2fr  30fr;
 }

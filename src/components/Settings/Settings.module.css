@@ -1,0 +1,13 @@
+.Menu {
+    grid-area: m;
+    background-color: white;
+    text-align: center;
+}
+
+.Items {
+    color: black;
+}
+
+.Items.Active{
+    color: grey;
+}

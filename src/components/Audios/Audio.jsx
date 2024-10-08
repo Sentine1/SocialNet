@@ -1,7 +1,7 @@
 import React from "react";
-import module from "./Dialogs.module.css"
-import Menu from "./DialogItems/DialogMenu"
-import Content from "./DialogItems/DialogContent";
+import module from "./Audios.module.css"
+import Menu from "./Items/Menu"
+import Content from "./Items/Content";
 
 function Dialogs (){
     return(

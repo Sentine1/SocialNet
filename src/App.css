@@ -8,21 +8,11 @@
     grid-template-columns: 2fr  10fr;
 }
 
-.header {
-    grid-area: h;
-    background-color: green;
-}
-
 .header img {
     width: 50px;
 }
 
-.Menu {
-    grid-area: m;
-    background-color: red;
-}
-
-.Content {
+.app-wrapper-content{
     grid-area: c;
     background-color: blue;
 }

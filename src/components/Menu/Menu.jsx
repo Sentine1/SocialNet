@@ -5,27 +5,27 @@ function Menu() {
 return <nav className={module.Menu}>
 
 	<div className={module.Items}>
-		Profile
+		<a href="/profile">Profile</a>
 	</div>
 	<div className={module.Items}>
-		News
+		<a href="/news">News</a>
 	</div>
 	<div className={module.Items}>
-		Friends
+		<a href="/friends">Friends</a>
 	</div>
 	<div className={module.Items}>
-		Videos
+		<a href="/videos">Videos</a>
 	</div>
 	<div className={module.Items}>
-		Audios
+		<a href="/audios">Audios</a>
 	</div>
 	<div className={module.Items}>
-		Messages
+		<a href="/dialogs">Messages</a>
 	</div>
 	<br/>
 	<br/>
 	<div className={`${module.Items} ${module.Active}`}>
-		Settings
+		<a href="/settings">Settings</a>
 	</div>
 </nav>
 };
