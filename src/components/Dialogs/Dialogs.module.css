@@ -1,9 +1,14 @@
-.Dialogs{
+.Dialogs {
     display: grid;
 
-    grid-template-areas:
-   "dm dc"
-   "dm dc";
-    grid-template-rows: 20px 10fr;
-    grid-template-columns: 1fr  10fr;
+    grid-template-columns: 2fr  10fr;
+}
+
+.Menu {
+    padding: 10px;
+
+}
+
+.Content {
+    padding: 20px;
 }

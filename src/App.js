@@ -4,7 +4,7 @@ import Header from './components/Header/Header'
 import Menu from './components/Menu/Menu'
 import Content from './components/Content/Content'
 import Dialog from './components/Dialogs/Dialogs'
-import News from  './components/News/News'
+import News from './components/News/News'
 import Audio from './components/Audios/Audio'
 import Video from './components/Videos/Videos'
 import Friends from './components/Friends/Friends'
@@ -19,13 +19,13 @@ function App() {
                 <Menu/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path='/dialogs' element={<Dialog />}/>
-                        <Route path='/profile' element={<Content />}/>
-                        <Route path='/news' element={<News />}/>
-                        <Route path='/audios' element={<Audio />}/>
-                        <Route path='/videos' element={<Video />}/>
-                        <Route path='/friends' element={<Friends />}/>
-                        <Route path='/settings' element={<Settings />}/>
+                        <Route path='/dialogs' element={<Dialog/>}/>
+                        <Route path='/profile' element={<Content/>}/>
+                        <Route path='/news' element={<News/>}/>
+                        <Route path='/audios' element={<Audio/>}/>
+                        <Route path='/videos' element={<Video/>}/>
+                        <Route path='/friends' element={<Friends/>}/>
+                        <Route path='/settings' element={<Settings/>}/>
                     </Routes>
                 </div>
             </div>

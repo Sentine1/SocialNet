@@ -6,8 +6,8 @@ import Content from "./DialogItems/DialogContent";
 function Dialogs (){
     return(
         <div className={module.Dialogs}>
-            <Menu />
-            <Content />
+            <Menu className ={module.Menu}/>
+            <Content className ={module.Content}/>
         </div>
     )
 }

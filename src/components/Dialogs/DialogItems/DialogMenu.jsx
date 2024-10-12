@@ -5,7 +5,7 @@ function DialogMenu (){
     return(
         <div className={module.Menu}>
             <div>Person one</div>
-            <div>Person two</div>
+            <div className={module.active}>Person two</div>
             <div>Person n</div>
         </div>
     )

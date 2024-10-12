@@ -1,4 +1,8 @@
 ﻿.Menu {
-    grid-area: dm;
     color: gold;
+}
+
+
+.Menu .active{
+    color: black;
 }
