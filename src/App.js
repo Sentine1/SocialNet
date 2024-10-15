@@ -11,7 +11,7 @@ import Friends from './components/Friends/Friends'
 import Settings from './components/Settings/Settings'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
-function App() {
+function App(props) {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -19,7 +19,7 @@ function App() {
                 <Menu/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path='/dialogs' element={<Dialog/>}/>
+                        <Route path='/dialogs' element={<Dialog data={props.data}/>}/>
                         <Route path='/profile' element={<Content/>}/>
                         <Route path='/news' element={<News/>}/>
                         <Route path='/audios' element={<Audio/>}/>
