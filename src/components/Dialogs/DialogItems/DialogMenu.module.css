@@ -6,3 +6,8 @@
 .Menu .active{
     color: black;
 }
+
+.Menu .a{
+    color: white;
+    text-decoration: none;
+}

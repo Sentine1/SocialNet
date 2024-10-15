@@ -31,6 +31,6 @@ return <nav className={module.Menu}>
 		<NavLink to="/settings">Settings</NavLink>
 	</div>
 </nav>
-};
+}
 
 export default Menu;

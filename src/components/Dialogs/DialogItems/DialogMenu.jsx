@@ -1,12 +1,14 @@
-﻿import React from "react";
-import module from "./DialogMenu.module.css"
+import React from "react";
+import module from "./DialogMenu.module.css";
+import MenuItems from "./DialogMenuItems";
 
 function DialogMenu (){
-    return(
+    return(     
         <div className={module.Menu}>
-            <div>Person one</div>
-            <div className={module.active}>Person two</div>
-            <div>Person n</div>
+            <MenuItems id='1' name='person One' />
+            <MenuItems  id="2" name="Person two" />
+            <MenuItems className = {module.active} id="3" name="person Three" />
+            <MenuItems id={4} name = "four" />
         </div>
     )
 }
