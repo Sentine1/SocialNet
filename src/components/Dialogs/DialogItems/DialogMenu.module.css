@@ -1,5 +1,7 @@
 ﻿.Menu {
-    color: gold;
+    color: yellow;
+    font-size: x-large;
+    text-decoration: none;
 }
 
 
@@ -7,7 +9,7 @@
     color: black;
 }
 
-.Menu .a{
+.a{
     color: white;
     text-decoration: none;
 }

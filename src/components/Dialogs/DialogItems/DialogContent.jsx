@@ -2,14 +2,22 @@
 import module from "./DialogContent.module.css"
 import Items from "./DialogContentItems"
 
-function DialogContent (){
-    return(
+let mesages = [
+
+    {message: "Message one"},
+    {message: "Message two"},
+    {message: "Message Three"},
+    {message: "Message Four"}
+
+]
+
+let MapMessage = mesages.map(e => <Items message1={e.message}/>)
+
+function DialogContent() {
+    return (
         <div className={module.Content}>
             Content:
-            <Items message1="Message one"/>
-            <Items message2="Message two"/>
-            <Items message3="Message Three"/>
-            <Items message4="Message Four"/>
+            {MapMessage}
             fix
         </div>
     )
