@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MenuItems from "./components/Dialogs/DialogItems/DialogMenuItems";
 import Items from "./components/Dialogs/DialogItems/DialogContentItems";
+import Post from "./components/Content/SelfPosts/Post/Post";
 
 let PersonsList = [
     {id: 1, name: 'person One'},
@@ -25,12 +26,21 @@ let Messages = [
 
 ]
 
+let Posts = [
+    {message: "Test message 1", like: 40},
+    {message: "Test message 2", like: 20},
+    {message: "Test message 5", like: 40},
+    {message: "Test message 3", like: 60}
+]
+
+let PostMessage = Posts.map(e => (<Post message={e.message} like={e.like}/>));
+
 let MapMessage = Messages.map(e => <Items message1={e.message}/>)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App MapPersonList={MapPersonList} MapMessage={MapMessage}/>
+        <App MapPersonList={MapPersonList} MapMessage={MapMessage} PostMessage={PostMessage}/>
     </React.StrictMode>
 );
 

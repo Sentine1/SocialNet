@@ -21,7 +21,7 @@ function App(props) {
                     <Routes>
                         <Route path='/dialogs'
                                element={<Dialog MapPersonList={props.MapPersonList} MapMessage={props.MapMessage}/>}/>
-                        <Route path='/profile' element={<Content/>}/>
+                        <Route path='/profile' element={<Content PostMessage={props.PostMessage}/>}/>
                         <Route path='/news' element={<News/>}/>
                         <Route path='/audios' element={<Audio/>}/>
                         <Route path='/videos' element={<Video/>}/>

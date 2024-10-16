@@ -2,7 +2,7 @@ import React from 'react';
 import module from './SelfPosts.module.css'
 import Post from "./Post/Post";
 
-function SelfPosts() {
+function SelfPosts(props) {
     return <div className={module.Content}>
         <div>
             <div>
@@ -12,10 +12,7 @@ function SelfPosts() {
                     <button>Save</button>
                     <button>Delete</button>
                 </div>
-
-                <Post message="Test message 1" like={40}/>
-                <Post message="Test message 2" like={20}/>
-                <Post message="Test message 3" like={60}/>
+                {props.PostMessage}
             </div>
         </div>
     </div>
