@@ -3,11 +3,11 @@ import module from "./Dialogs.module.css"
 import Menu from "./DialogItems/DialogMenu"
 import Content from "./DialogItems/DialogContent";
 
-function Dialogs (props){
-    return(
+function Dialogs(props) {
+    return (
         <div className={module.Dialogs}>
-            <Menu className ={module.Menu} data ={props.data}/>
-            <Content className ={module.Content}/>
+            <Menu className={module.Menu} MapPersonList={props.MapPersonList}/>
+            <Content className={module.Content} MapMessage={props.MapMessage}/>
         </div>
     )
 }

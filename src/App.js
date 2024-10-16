@@ -19,7 +19,8 @@ function App(props) {
                 <Menu/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path='/dialogs' element={<Dialog data={props.data}/>}/>
+                        <Route path='/dialogs'
+                               element={<Dialog MapPersonList={props.MapPersonList} MapMessage={props.MapMessage}/>}/>
                         <Route path='/profile' element={<Content/>}/>
                         <Route path='/news' element={<News/>}/>
                         <Route path='/audios' element={<Audio/>}/>

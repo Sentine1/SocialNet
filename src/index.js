@@ -4,21 +4,33 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MenuItems from "./components/Dialogs/DialogItems/DialogMenuItems";
+import Items from "./components/Dialogs/DialogItems/DialogContentItems";
 
 let PersonsList = [
-    {id:1, name:'person One'},
-    {id:2, name:'Person two'},
-    {id:3, name:'person Three'},
-    {id:4, name:'person four'},
-    {id:5, name:'person five'},
+    {id: 1, name: 'person One'},
+    {id: 2, name: 'Person two'},
+    {id: 3, name: 'person Three'},
+    {id: 4, name: 'person four'},
+    {id: 5, name: 'person five'},
 ];
 
-let MapPersonList = PersonsList.map(e => (<MenuItems id={e.id} name={e.name} />))
+let MapPersonList = PersonsList.map(e => (<MenuItems id={e.id} name={e.name}/>))
+
+let Messages = [
+
+    {message: "Message one"},
+    {message: "Message two"},
+    {message: "Message Three"},
+    {message: "Message Four"}
+
+]
+
+let MapMessage = Messages.map(e => <Items message1={e.message}/>)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App data={MapPersonList}/>
+        <App MapPersonList={MapPersonList} MapMessage={MapMessage}/>
     </React.StrictMode>
 );
 
