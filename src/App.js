@@ -10,7 +10,7 @@ import Video from './components/Videos/Videos'
 import Friends from './components/Friends/Friends'
 import Settings from './components/Settings/Settings'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-
+debugger
 function App(props) {
     return (
         <BrowserRouter>
@@ -20,8 +20,9 @@ function App(props) {
                 <div className='app-wrapper-content'>
                     <Routes>
                         <Route path='/dialogs'
-                               element={<Dialog MapPersonList={props.MapPersonList} MapMessage={props.MapMessage}/>}/>
-                        <Route path='/profile' element={<Content PostMessage={props.PostMessage}/>}/>
+                               element={<Dialog MapPersonList={props.state.messagePage.MapPersonList}
+                                                MapMessage={props.state.messagePage.MapMessage}/>}/>
+                        <Route path='/profile' element={<Content PostMessage={props.state.profilePage.PostMessage}/>}/>
                         <Route path='/news' element={<News/>}/>
                         <Route path='/audios' element={<Audio/>}/>
                         <Route path='/videos' element={<Video/>}/>
