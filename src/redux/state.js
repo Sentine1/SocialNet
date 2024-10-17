@@ -2,6 +2,7 @@
 import Post from "../components/Content/SelfPosts/Post/Post";
 import Items from "../components/Dialogs/DialogItems/DialogContentItems";
 import React from "react";
+import {NavLink} from "react-router-dom";
 
 let PersonsList = [
     {id: 1, name: 'person One'},
@@ -27,19 +28,34 @@ let Posts = [
     {message: "Test message 3", like: 60}
 ]
 
+let Friends = [
+    {name: "Person one",ava:"ava1.png"},
+    {name: "Person two",ava:"ava2.png"},
+    {name: "Person three",ava:"ava3.png"},
+    {name: "Person four",ava:"ava4.png"},
+    {name: "Person n",ava:"avan.png"}
+]
+
 let PostMessage = Posts.map(e => (<Post message={e.message} like={e.like}/>));
 
-let MapMessage = Messages.map(e => <Items message1={e.message}/>)
+let MapMessage = Messages.map(e => <Items message1={e.message}/>);
 
-let MapPersonList = PersonsList.map(e => (<MenuItems id={e.id} name={e.name}/>))
+let MapPersonList = PersonsList.map(e => (<MenuItems id={e.id} name={e.name}/>));
+
+let FriendsName = Friends.map(e => (<div><NavLink to="/friends">{e.name}</NavLink></div>));
+let FriendsAva = Friends.map(e => <img src={e.ava} alt={e.name + " avatar"}/>);
 
 let state = {
     messagePage: {
         MapPersonList: [MapPersonList],
-        MapMessage: [MapMessage]
+        MapMessage: [MapMessage],
     },
     profilePage: {
-        PostMessage: [PostMessage]
+        PostMessage: [PostMessage],
+    },
+    FriendsData: {
+        ava: [FriendsAva],
+        names: [FriendsName],
     }
 }
 

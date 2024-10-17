@@ -1,8 +1,10 @@
 .Content {
+
 }
 
-.Content img {
-    width: 500px;
+.Content Img {
+    width: 400px;
+    height: 400px;
 }
 
 .Profile{

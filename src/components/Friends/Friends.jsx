@@ -3,10 +3,10 @@ import module from "./Friends.module.css"
 import Menu from "./FriendsItems/Menu"
 import Content from "./FriendsItems/Content";
 
-function Friends (){
+function Friends (props){
     return(
         <div className={module.Friends}>
-            <Menu />
+            <Menu data={props.state}/>
             <Content />
         </div>
     )

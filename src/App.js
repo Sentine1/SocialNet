@@ -10,13 +10,13 @@ import Video from './components/Videos/Videos'
 import Friends from './components/Friends/Friends'
 import Settings from './components/Settings/Settings'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-debugger
+
 function App(props) {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Menu/>
+                <Menu state={props.state}/>
                 <div className='app-wrapper-content'>
                     <Routes>
                         <Route path='/dialogs'
@@ -26,7 +26,7 @@ function App(props) {
                         <Route path='/news' element={<News/>}/>
                         <Route path='/audios' element={<Audio/>}/>
                         <Route path='/videos' element={<Video/>}/>
-                        <Route path='/friends' element={<Friends/>}/>
+                        <Route path='/friends' element={<Friends state={props.state.FriendsData}/>}/>
                         <Route path='/settings' element={<Settings/>}/>
                     </Routes>
                 </div>

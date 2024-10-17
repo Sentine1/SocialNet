@@ -1,4 +1,10 @@
 ﻿.Menu {
-    grid-area: m;
+    display: grid;
+    grid: auto-flow dense / 40px 40px 2fr;
     color: darkred;
+}
+
+.Menu img{
+    width: 40px;
+    height: 40px;
 }

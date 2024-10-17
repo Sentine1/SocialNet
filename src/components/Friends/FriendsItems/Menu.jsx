@@ -1,12 +1,11 @@
 ﻿import React from "react";
 import module from "./Menu.module.css"
 
-function DialogMenu (){
+function DialogMenu (props){
     return(
         <div className={module.Menu}>
-            <div>Person one</div>
-            <div>Person two</div>
-            <div>Person n</div>
+            <div>{props.data.ava}</div>
+            <div>{props.data.names}</div>
         </div>
     )
 }
