@@ -22,12 +22,6 @@ let Messages = [
     {message: "Message Four", direction: "from"}
 ]
 
-let Posts = [
-    {message: "Test message 1", like: 40},
-    {message: "Test message 2", like: 20},
-    {message: "Test message 5", like: 40},
-    {message: "Test message 3", like: 60}]
-
 let Friends = [
     {name: "Person one", ava: "ava1.png"},
     {name: "Person two", ava: "ava2.png"},
@@ -36,7 +30,7 @@ let Friends = [
     {name: "Person n", ava: "avan.png"}
 ]
 
-let PostMessage = Posts.map(e => (<Post message={e.message} like={e.like}/>));
+
 let MapMessage = Messages.map(e => (<Items message={e.message} direction={e.direction}/>));
 let MapPersonList = PersonsList.map(e => (<MenuItems id={e.id} name={e.name}/>));
 let FriendsName = Friends.map(e => (<div><NavLink to="/friends">{e.name}</NavLink></div>));
@@ -48,11 +42,22 @@ let state = {
         MapMessage: [MapMessage],
     },
     profilePage: {
-        PostMessage: [PostMessage],
+        PostMessage: [
+            {message: "Test message 1", like: 40},
+            {message: "Test message 2", like: 20},
+            {message: "Test message 5", like: 40},
+            {message: "Test message 3", like: 60}],
     },
     FriendsData: {
         ava: [FriendsAva], names: [FriendsName],
     }
 }
 
+export let addPost = (postMessage) => {
+    let newPost = {
+        message: postMessage?postMessage:"",
+        like:1
+    }
+    state.profilePage.PostMessage.push(newPost);
+}
 export default state;

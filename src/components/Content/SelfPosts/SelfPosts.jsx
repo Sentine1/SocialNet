@@ -1,12 +1,15 @@
 import React from 'react';
 import module from './SelfPosts.module.css'
+import Post from "./Post/Post";
 
 function SelfPosts(props) {
     let newPostElement = React.createRef();
     let addPost = () => {
         let text = newPostElement.current.value;
-        alert(text?text:"Null?")
+        props.addPost(text);
     }
+    
+    let PostMessage = props.PostMessage.map(e => (<Post message={e.message} like={e.like}/>));
     return <div className={module.Content}>
         <div>
             <div>
@@ -16,7 +19,7 @@ function SelfPosts(props) {
                     <button onClick={addPost}>Save</button>
                     <button onClick={ ()=>{alert('Damn!!')}}>Delete</button>
                 </div>
-                {props.PostMessage}
+                {PostMessage}
             </div>
         </div>
     </div>
