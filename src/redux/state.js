@@ -14,10 +14,12 @@ let PersonsList = [
 
 let Messages = [
 
-    {message: "Message one"},
-    {message: "Message two"},
-    {message: "Message Three"},
-    {message: "Message Four"}
+    {message: "Message one", direction:"from"},
+    {message: "Answer one", direction:"to"},
+    {message: "Message two", direction:"from"},
+    {message: "Message Three", direction:"from"},
+    {message: "Answer two", direction:"to"},
+    {message: "Message Four", direction:"from"}
 
 ]
 
@@ -38,7 +40,7 @@ let Friends = [
 
 let PostMessage = Posts.map(e => (<Post message={e.message} like={e.like}/>));
 
-let MapMessage = Messages.map(e => <Items message1={e.message}/>);
+let MapMessage = Messages.map(e => <Items message={e.message} direction={e.direction}/>);
 
 let MapPersonList = PersonsList.map(e => (<MenuItems id={e.id} name={e.name}/>));
 

@@ -4,9 +4,9 @@ import module from "./DialogContent.module.css"
 function DialogContent(props) {
     return (
         <div className={module.Content}>
-            Content:
-            {props.MapMessage}
-            fix
+            <div>
+                {props.MapMessage}
+            </div>
         </div>
     )
 }
