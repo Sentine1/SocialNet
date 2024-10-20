@@ -9,11 +9,10 @@ import Audio from './components/Audios/Audio'
 import Video from './components/Videos/Videos'
 import Friends from './components/Friends/Friends'
 import Settings from './components/Settings/Settings'
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 
 function App(props) {
     return (
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Menu state={props.state}/>
@@ -31,7 +30,6 @@ function App(props) {
                     </Routes>
                 </div>
             </div>
-        </BrowserRouter>
     );
 }
 

@@ -1,8 +1,8 @@
-﻿import MenuItems from "../components/Dialogs/DialogItems/DialogMenuItems";
-import Post from "../components/Content/SelfPosts/Post/Post";
+import MenuItems from "../components/Dialogs/DialogItems/DialogMenuItems";
 import Items from "../components/Dialogs/DialogItems/DialogContentItems";
 import React from "react";
 import {NavLink} from "react-router-dom";
+import {rerenderEntireTree} from "../render";
 
 let PersonsList = [
     {id: 1, name: 'person One'},
@@ -59,5 +59,6 @@ export let addPost = (postMessage) => {
         like:1
     }
     state.profilePage.PostMessage.push(newPost);
+    rerenderEntireTree(state);
 }
 export default state;
