@@ -11,7 +11,7 @@ function Content(props) {
             <img src="Ava.jpg" alt="Avatar"/>
             Profile Data
         </div>
-        <SelfPosts PostMessage={props.PostMessage} addPost={props.addPost}/>
+        <SelfPosts profilePage={props.profilePage} addPost={props.addPost} editText={props.editText}/>
     </div>
 }
 

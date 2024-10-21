@@ -47,18 +47,24 @@ let state = {
             {message: "Test message 2", like: 20},
             {message: "Test message 5", like: 40},
             {message: "Test message 3", like: 60}],
+        newPostText: "Add new post",
     },
     FriendsData: {
         ava: [FriendsAva], names: [FriendsName],
     }
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
-        message: postMessage?postMessage:"",
+        message: state.profilePage.newPostText,
         like:1
     }
     state.profilePage.PostMessage.push(newPost);
+    rerenderEntireTree(state);
+}
+
+export let editText = (text) => {
+    state.profilePage.newPostText = text;
     rerenderEntireTree(state);
 }
 export default state;

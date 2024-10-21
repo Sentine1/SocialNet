@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import module from "./DialogContent.module.css"
 
 function DialogContent(props) {
