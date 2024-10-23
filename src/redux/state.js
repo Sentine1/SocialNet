@@ -13,7 +13,6 @@ let PersonsList = [
 ];
 
 let Messages = [
-
     {message: "Message one", direction: "from"},
     {message: "Answer one", direction: "to"},
     {message: "Message two", direction: "from"},
@@ -30,8 +29,7 @@ let Friends = [
     {name: "Person n", ava: "avan.png"}
 ]
 
-
-let MapMessage = Messages.map(e => (<Items message={e.message} direction={e.direction}/>));
+let MapMessage = Messages.map(e => <Items message={e.message} direction={e.direction}/>);
 let MapPersonList = PersonsList.map(e => (<MenuItems id={e.id} name={e.name}/>));
 let FriendsName = Friends.map(e => (<div><NavLink to="/friends">{e.name}</NavLink></div>));
 let FriendsAva = Friends.map(e => (<img src={e.ava} alt={e.name + " avatar"}/>));
@@ -40,6 +38,7 @@ let state = {
     messagePage: {
         MapPersonList: [MapPersonList],
         MapMessage: [MapMessage],
+        textMessage: "Start  message",
     },
     profilePage: {
         PostMessage: [
@@ -57,7 +56,7 @@ let state = {
 export let addPost = () => {
     let newPost = {
         message: state.profilePage.newPostText,
-        like:1
+        like: 1
     }
     state.profilePage.PostMessage.push(newPost);
     rerenderEntireTree(state);
@@ -65,6 +64,21 @@ export let addPost = () => {
 
 export let editText = (text) => {
     state.profilePage.newPostText = text;
+    rerenderEntireTree(state);
+}
+
+export let addMessage = () => {
+    let newMessage = {
+        message: state.messagePage.textMessage,
+        direction: "to"
+    };
+    let item = <Items message={newMessage.message} direction={newMessage.direction}/>;
+    state.messagePage.MapMessage.push(item);
+    rerenderEntireTree(state);
+}
+
+export let editMessageText = (text) => {
+    state.messagePage.textMessage = text;
     rerenderEntireTree(state);
 }
 export default state;

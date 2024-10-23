@@ -8,26 +8,29 @@ function SelfPosts(props) {
         props.addPost();
         clearText();
     }
-    
-    let clearText = () =>
-    {
+
+    let clearText = () => {
         props.editText("");
     }
-    
-    let onChangeEvent = ()=>{
+
+    let onChangeEvent = () => {
         props.editText(newPostElement.current.value);
     }
-    
+
     let PostMessage = props.profilePage.PostMessage.map(e => (<Post message={e.message} like={e.like}/>));
-    
+
     return <div className={module.Content}>
         <div>
             <div>
-                <textarea onChange={onChangeEvent} ref={newPostElement} onClick={clearText}  value={props.profilePage.newPostText}/>
+                <textarea onChange={onChangeEvent} ref={newPostElement}
+                          value={props.profilePage.newPostText}/>
                 <div/>
                 <div>
                     <button onClick={addPost}>Save</button>
-                    <button onClick={ ()=>{alert('Damn!!')}}>Delete</button>
+                    <button onClick={() => {
+                        alert('Damn!!')
+                    }}>Delete
+                    </button>
                 </div>
                 {PostMessage}
             </div>

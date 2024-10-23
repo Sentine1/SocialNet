@@ -3,17 +3,27 @@ import module from "./DialogContent.module.css"
 
 function DialogContent(props) {
     let newMessageElement = React.createRef();
+
     let addMessage = () => {
-        let text = newMessageElement.current.value;
-        alert(text?text:"Null?")
+        props.addMessage();
+        clearText();
     }
+
+    let clearText = () => {
+        props.editMessageText("");
+    }
+
+    let onChangeEvent = () => {
+        props.editMessageText(newMessageElement.current.value);
+    }
+    
     return (
         <div className={module.Content}>
             <div>
-                {props.MapMessage}
+                {props.messagePage.MapMessage}
             </div>
             <div>
-                <textarea ref={newMessageElement}></textarea>
+                <textarea ref={newMessageElement} onChange={onChangeEvent} onClick={clearText} value={props.messagePage.textMessage}></textarea>
             </div>
             <button onClick={addMessage}>pOst</button>
         </div>

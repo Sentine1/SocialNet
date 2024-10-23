@@ -6,8 +6,9 @@ import module from "./Dialogs.module.css";
 function Dialogs(props) {
     return (
         <div className={module.Dialogs}>
-            <Menu className={module.Menu} MapPersonList={props.MapPersonList}/>
-            <Content className={module.Content} MapMessage={props.MapMessage}/>
+            <Menu className={module.Menu} MapPersonList={props.messagePage.MapPersonList}/>
+            <Content className={module.Content} messagePage={props.messagePage} addMessage={props.addMessage}
+                     editMessageText={props.editMessageText}/>
         </div>
     )
 }

@@ -13,23 +13,26 @@ import {Route, Routes} from "react-router-dom";
 
 function App(props) {
     return (
-            <div className='app-wrapper'>
-                <Header/>
-                <Menu state={props.state}/>
-                <div className='app-wrapper-content'>
-                    <Routes>
-                        <Route path='/dialogs'
-                               element={<Dialog MapPersonList={props.state.messagePage.MapPersonList}
-                                                MapMessage={props.state.messagePage.MapMessage}/>}/>
-                        <Route path='/profile' element={<Content profilePage={props.state.profilePage} addPost={props.addPost} editText={props.editText}/>}/>
-                        <Route path='/news' element={<News/>}/>
-                        <Route path='/audios' element={<Audio/>}/>
-                        <Route path='/videos' element={<Video/>}/>
-                        <Route path='/friends' element={<Friends state={props.state.FriendsData}/>}/>
-                        <Route path='/settings' element={<Settings/>}/>
-                    </Routes>
-                </div>
+        <div className='app-wrapper'>
+            <Header/>
+            <Menu state={props.state}/>
+            <div className='app-wrapper-content'>
+                <Routes>
+                    <Route path='/dialogs'
+                           element={<Dialog messagePage={props.state.messagePage}
+                                            editMessageText={props.editMessageText}
+                                            addMessage={props.addMessage}/>}/>
+                    <Route path='/profile'
+                           element={<Content profilePage={props.state.profilePage} addPost={props.addPost}
+                                             editText={props.editText}/>}/>
+                    <Route path='/news' element={<News/>}/>
+                    <Route path='/audios' element={<Audio/>}/>
+                    <Route path='/videos' element={<Video/>}/>
+                    <Route path='/friends' element={<Friends state={props.state.FriendsData}/>}/>
+                    <Route path='/settings' element={<Settings/>}/>
+                </Routes>
             </div>
+        </div>
     );
 }
 
