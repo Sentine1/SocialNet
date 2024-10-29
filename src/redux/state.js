@@ -2,8 +2,10 @@ import MenuItems from "../components/Dialogs/DialogItems/DialogMenuItems";
 import Items from "../components/Dialogs/DialogItems/DialogContentItems";
 import React from "react";
 import {NavLink} from "react-router-dom";
-import {rerenderEntireTree} from "../render";
 
+let rerenderEntireTree = () => {
+    console.log('state changed');
+}
 let PersonsList = [
     {id: 1, name: 'person One'},
     {id: 2, name: 'Person two'},
@@ -59,12 +61,13 @@ export let addPost = () => {
         like: 1
     }
     state.profilePage.PostMessage.push(newPost);
-    rerenderEntireTree(state);
+    state.profilePage.newPostText = "Add new post";
+    rerenderEntireTree();
 }
 
 export let editText = (text) => {
     state.profilePage.newPostText = text;
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 }
 
 export let addMessage = () => {
@@ -74,11 +77,16 @@ export let addMessage = () => {
     };
     let item = <Items message={newMessage.message} direction={newMessage.direction}/>;
     state.messagePage.MapMessage.push(item);
-    rerenderEntireTree(state);
+    state.messagePage.textMessage = "Start  message";
+    rerenderEntireTree();
 }
 
 export let editMessageText = (text) => {
     state.messagePage.textMessage = text;
-    rerenderEntireTree(state);
+    rerenderEntireTree();
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 }
 export default state;

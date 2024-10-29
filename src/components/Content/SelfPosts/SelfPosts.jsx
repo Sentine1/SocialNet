@@ -6,11 +6,6 @@ function SelfPosts(props) {
     let newPostElement = React.createRef();
     let addPost = () => {
         props.addPost();
-        clearText();
-    }
-
-    let clearText = () => {
-        props.editText("");
     }
 
     let onChangeEvent = () => {

@@ -6,11 +6,6 @@ function DialogContent(props) {
 
     let addMessage = () => {
         props.addMessage();
-        clearText();
-    }
-
-    let clearText = () => {
-        props.editMessageText("");
     }
 
     let onChangeEvent = () => {
@@ -23,7 +18,7 @@ function DialogContent(props) {
                 {props.messagePage.MapMessage}
             </div>
             <div>
-                <textarea ref={newMessageElement} onChange={onChangeEvent} onClick={clearText} value={props.messagePage.textMessage}></textarea>
+                <textarea ref={newMessageElement} onChange={onChangeEvent} value={props.messagePage.textMessage}></textarea>
             </div>
             <button onClick={addMessage}>pOst</button>
         </div>
