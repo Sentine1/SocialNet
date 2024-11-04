@@ -1,5 +1,6 @@
 import React from "react";
 import module from "./DialogContent.module.css"
+import Items from "./DialogContentItems"
 
 function DialogContent(props) {
     let newMessageElement = React.createRef();
@@ -12,10 +13,12 @@ function DialogContent(props) {
         props.editMessageText(newMessageElement.current.value);
     }
     
+    let messages = props.messagePage.Message.map(e => <Items message={e.message} direction={e.direction}/>);    
+
     return (
         <div className={module.Content}>
             <div>
-                {props.messagePage.MapMessage}
+                {messages}
             </div>
             <div>
                 <textarea ref={newMessageElement} onChange={onChangeEvent} value={props.messagePage.textMessage}></textarea>

@@ -12,8 +12,6 @@ function SelfPosts(props) {
         props.editText(newPostElement.current.value);
     }
 
-    let PostMessage = props.profilePage.PostMessage.map(e => (<Post message={e.message} like={e.like}/>));
-
     return <div className={module.Content}>
         <div>
             <div>
@@ -27,7 +25,7 @@ function SelfPosts(props) {
                     }}>Delete
                     </button>
                 </div>
-                {PostMessage}
+                {props.profilePage.PostMessage.map(e => (<Post message={e.message} like={e.like}/>))}
             </div>
         </div>
     </div>
