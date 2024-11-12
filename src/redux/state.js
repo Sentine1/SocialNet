@@ -21,7 +21,7 @@ let store = {
                 {message: "Answer two", direction: "to"},
                 {message: "Message Four", direction: "from"}
             ],
-            textMessage: "Start  message",
+            textMessage: '',
         },
         profilePage: {
             PostMessage: [

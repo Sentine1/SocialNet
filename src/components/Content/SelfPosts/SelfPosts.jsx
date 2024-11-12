@@ -9,8 +9,8 @@ function SelfPosts(props) {
         props.dispatch(addPostActionCreator())
     }
     
-    let onChangeEvent = () => {
-        let text = newPostElement.current.value;
+    let onChangeEvent = (e) => {
+        let text =e.target.value;
         let action = onChangeActionCreator(text);
         props.dispatch(action)
     }
@@ -19,7 +19,7 @@ function SelfPosts(props) {
         <div>
             <div>
                 <textarea onChange={onChangeEvent} ref={newPostElement}
-                          value={props.newPostText}/>
+                          value={props.newPostText} placeholder="New post"/>
                 <div/>
                 <div>
                     <button onClick={addPost}>Save</button>

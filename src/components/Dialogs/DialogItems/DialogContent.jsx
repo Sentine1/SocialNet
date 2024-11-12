@@ -23,7 +23,7 @@ function DialogContent(props) {
             </div>
             <div>
                 <textarea ref={newMessageElement} onChange={onChangeEvent}
-                          value={props.messagePage.textMessage}></textarea>
+                          value={props.messagePage.textMessage} placeholder="Enter message"></textarea>
             </div>
             <div>
                 <button onClick={addPost}>pOst</button>
