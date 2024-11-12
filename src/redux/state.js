@@ -24,7 +24,7 @@ let store = {
                 {message: "Test message 2", like: 20},
                 {message: "Test message 5", like: 40},
                 {message: "Test message 3", like: 60}],
-            newPostText: "Add new post",
+            newPostText: '',
         },
         FriendsData: {
             Friends: [
@@ -36,45 +36,44 @@ let store = {
             ],
         },
     },
-    getState(){
-        return this._state;
-    },
     _callSubscriber() {
         console.log('state changed');
     },
-    addPost() {
-        let newPost = {
-            message: this._state.profilePage.newPostText,
-            like: 1
-        }
-        this._state.profilePage.PostMessage.push(newPost);
-        this._state.profilePage.newPostText = "Add new post";
-        this._callSubscriber();
+    getState() {
+        return this._state;
     },
-    editText(text) {
-        this._state.profilePage.newPostText = text;
-        this._callSubscriber();
-    },
-
-    addMessage() {
-        let newMessage = {
-            message: this._state.messagePage.textMessage,
-            direction: "to"
-        };
-        this._state.messagePage.Message.push(newMessage);
-        this._state.messagePage.textMessage = "Start  message";
-        this._callSubscriber();
-    },
-
-    editMessageText(text) {
-        this._state.messagePage.textMessage = text;
-        this._callSubscriber();
-    },
-
     subscribe(observer) {
         this._state._callSubscriber = observer;
     },
-
+    
+    dispatch(action){
+        if(action.type === "ADD-POST")  {
+            let newPost = {
+                message: this._state.profilePage.newPostText,
+                like: 1
+            }
+            this._state.profilePage.PostMessage.push(newPost);
+            this._state.profilePage.newPostText = "";
+            this._callSubscriber(this._state);
+        }
+        if(action.type === "EDIT-TEXT")  {
+            this._state.profilePage.newPostText = action.text;
+            this._callSubscriber(this._state);
+        }
+        if(action.type === "ADD-MESSAGE")  {
+            let newMessage = {
+                message: this._state.messagePage.textMessage,
+                direction: "to"
+            };
+            this._state.messagePage.Message.push(newMessage);
+            this._state.messagePage.textMessage = "Start  message";
+            this._callSubscriber(this._state);
+        }
+        if(action.type === "EDIT-MESSAGE-TEXT")  {
+            this._state.messagePage.textMessage = action.text;
+            this._callSubscriber(this._state);
+        }
+    },
 }
 
 

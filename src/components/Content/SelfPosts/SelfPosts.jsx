@@ -5,18 +5,19 @@ import Post from "./Post/Post";
 function SelfPosts(props) {
     let newPostElement = React.createRef();
     let addPost = () => {
-        props.addPost();
+        props.dispatch({type:'ADD-POST'});
     }
 
     let onChangeEvent = () => {
-        props.editText(newPostElement.current.value);
+        let action = {type: 'EDIT-TEXT', text: newPostElement.current.value};
+        props.dispatch(action);
     }
 
     return <div className={module.Content}>
         <div>
             <div>
                 <textarea onChange={onChangeEvent} ref={newPostElement}
-                          value={props.profilePage.newPostText}/>
+                          value={props.newPostText}/>
                 <div/>
                 <div>
                     <button onClick={addPost}>Save</button>
@@ -25,7 +26,7 @@ function SelfPosts(props) {
                     }}>Delete
                     </button>
                 </div>
-                {props.profilePage.PostMessage.map(e => (<Post message={e.message} like={e.like}/>))}
+                {props.PostMessage.map(e => (<Post message={e.message} like={e.like}/>))}
             </div>
         </div>
     </div>

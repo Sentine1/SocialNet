@@ -6,13 +6,14 @@ function DialogContent(props) {
     let newMessageElement = React.createRef();
 
     let addMessage = () => {
-        props.addMessage();
+        props.dispatch({type:'ADD-MESSAGE'});
     }
 
     let onChangeEvent = () => {
-        props.editMessageText(newMessageElement.current.value);
-    }
-    
+        let action = {type:'EDIT-MESSAGE-TEXT', text:newMessageElement.current.value}
+        props.dispatch(action);
+    }    
+
     let messages = props.messagePage.Message.map(e => <Items message={e.message} direction={e.direction}/>);    
 
     return (

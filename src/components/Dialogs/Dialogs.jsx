@@ -7,8 +7,7 @@ function Dialogs(props) {
     return (
         <div className={module.Dialogs}>
             <Menu className={module.Menu} PersonList={props.messagePage.PersonList}/>
-            <Content className={module.Content} messagePage={props.messagePage} addMessage={props.addMessage}
-                     editMessageText={props.editMessageText}/>
+            <Content className={module.Content} messagePage={props.messagePage} dispatch={props.dispatch}/>
         </div>
     )
 }
