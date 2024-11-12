@@ -48,7 +48,7 @@ let store = {
         return this._state;
     },
     subscribe(observer) {
-        this._state._callSubscriber = observer;
+        this._callSubscriber = observer;
     },
     
     dispatch(action){
