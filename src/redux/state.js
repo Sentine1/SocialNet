@@ -1,3 +1,8 @@
+const ADD_POST = "ADD-POST";
+const EDIT_TEXT = "EDIT-TEXT";
+const ADD_MESSAGE = "ADD-MESSAGE";
+const EDIT_MESSAGE_TEXT = "EDIT-MESSAGE-TEXT";
+
 let store = {
     _state: {
         messagePage: {
@@ -47,7 +52,7 @@ let store = {
     },
     
     dispatch(action){
-        if(action.type === "ADD-POST")  {
+        if(action.type === ADD_POST)  {
             let newPost = {
                 message: this._state.profilePage.newPostText,
                 like: 1
@@ -56,11 +61,11 @@ let store = {
             this._state.profilePage.newPostText = "";
             this._callSubscriber(this._state);
         }
-        if(action.type === "EDIT-TEXT")  {
+        else if(action.type === EDIT_TEXT)  {
             this._state.profilePage.newPostText = action.text;
             this._callSubscriber(this._state);
         }
-        if(action.type === "ADD-MESSAGE")  {
+        else if(action.type === ADD_MESSAGE)  {
             let newMessage = {
                 message: this._state.messagePage.textMessage,
                 direction: "to"
@@ -69,13 +74,24 @@ let store = {
             this._state.messagePage.textMessage = "Start  message";
             this._callSubscriber(this._state);
         }
-        if(action.type === "EDIT-MESSAGE-TEXT")  {
+        else if(action.type === EDIT_MESSAGE_TEXT)  {
             this._state.messagePage.textMessage = action.text;
             this._callSubscriber(this._state);
         }
     },
 }
 
+export const addMessageDialogActionCreator = () => ({type:'ADD-MESSAGE'})
+
+export const onChangeDialogActionCreator = (text) => {
+    return {type:'EDIT-MESSAGE-TEXT', text:text}
+}
+
+export const addPostActionCreator = () => ({type: 'ADD-POST'})
+
+export const onChangeActionCreator = (text) => {
+    return {type: 'EDIT-TEXT', text: text};
+}
 
 window.store = store;
 export default store;

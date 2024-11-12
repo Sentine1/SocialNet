@@ -1,16 +1,18 @@
 import React from 'react';
 import module from './SelfPosts.module.css'
 import Post from "./Post/Post";
+import {addPostActionCreator, onChangeActionCreator, onChangeDialogActionCreator} from "../../../redux/state";
 
 function SelfPosts(props) {
     let newPostElement = React.createRef();
-    let addPost = () => {
-        props.dispatch({type:'ADD-POST'});
+    let addPost = () =>{
+        props.dispatch(addPostActionCreator())
     }
-
+    
     let onChangeEvent = () => {
-        let action = {type: 'EDIT-TEXT', text: newPostElement.current.value};
-        props.dispatch(action);
+        let text = newPostElement.current.value;
+        let action = onChangeActionCreator(text);
+        props.dispatch(action)
     }
 
     return <div className={module.Content}>
