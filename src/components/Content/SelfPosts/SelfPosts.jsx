@@ -1,7 +1,7 @@
 import React from 'react';
 import module from './SelfPosts.module.css'
 import Post from "./Post/Post";
-import {addPostActionCreator, onChangeActionCreator, onChangeDialogActionCreator} from "../../../redux/state";
+import {addPostActionCreator, onChangeActionCreator} from "../../../redux/ProfileReducer";
 
 function SelfPosts(props) {
     let newPostElement = React.createRef();

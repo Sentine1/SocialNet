@@ -1,7 +1,7 @@
 import React from "react";
 import module from "./DialogContent.module.css"
 import Items from "./DialogContentItems"
-import {addMessageDialogActionCreator, onChangeDialogActionCreator} from "../../../redux/state";
+import {addMessageDialogActionCreator, onChangeDialogActionCreator} from "../../../redux/MessageReducer";
 
 function DialogContent(props) {
     let newMessageElement = React.createRef();

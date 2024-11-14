@@ -1,0 +1,30 @@
+const ADD_POST = "ADD-POST";
+const EDIT_TEXT = "EDIT-TEXT";
+
+const ProfileReducer = (state, action) => {
+
+    switch (action.type) {
+        case ADD_POST:  
+            let newPost = {
+                message: state.newPostText,
+                like: 1
+            }
+            state.PostMessage.push(newPost);
+            state.newPostText = "";
+            return state;
+        
+        case EDIT_TEXT:
+            state.newPostText = action.text;
+            return state;
+        default:
+            return state;
+    }
+}
+
+export const addPostActionCreator = () => ({type: 'ADD-POST'})
+
+export const onChangeActionCreator = (text) => {
+    return {type: 'EDIT-TEXT', text: text};
+}
+    
+export default ProfileReducer;
