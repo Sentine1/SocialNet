@@ -15,7 +15,7 @@ function App(props) {
     return (
         <div className='app-wrapper'>
             <Header/>
-            <Menu state={props.state}/>
+            <Menu FriendsData={props.state.FriendsData}/>
             <div className='app-wrapper-content'>
                 <Routes>
                     <Route path='/dialogs'

@@ -1,7 +1,15 @@
 const ADD_POST = "ADD-POST";
 const EDIT_TEXT = "EDIT-TEXT";
 
-const ProfileReducer = (state, action) => {
+let initialState = {
+    PostMessage: [
+        {message: "Test message 1", like: 40},
+        {message: "Test message 2", like: 20},
+        {message: "Test message 5", like: 40},
+        {message: "Test message 3", like: 60}],
+    newPostText: '',
+};
+const ProfileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_POST:  

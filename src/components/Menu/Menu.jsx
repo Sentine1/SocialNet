@@ -35,7 +35,7 @@ function Menu(props) {
         <br/>
         <div className={module.Items}>
             <NavLink to="/friends"><a href=""
-                                      className={props.state.FriendsData.names}>{props.state.FriendsData.ava}</a></NavLink>
+                                      className={props.FriendsData.names}>{props.FriendsData.ava}</a></NavLink>
         </div>
     </nav>
 }

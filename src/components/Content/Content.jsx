@@ -4,7 +4,7 @@ import SelfPosts from "./SelfPosts/SelfPosts";
 
 function Content(props) {
     return <div>
-        <div className={module.Content}>S
+        <div className={module.Content}>
             <img src="dragonball.png" alt="main page"/>
         </div>
         <div className={module.Profile}>
