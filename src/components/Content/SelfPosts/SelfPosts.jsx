@@ -6,13 +6,15 @@ import {addPostActionCreator, onChangeActionCreator} from "../../../redux/Profil
 function SelfPosts(props) {
     let newPostElement = React.createRef();
     let addPost = () =>{
-        props.dispatch(addPostActionCreator())
+        props.addPost();
     }
     
     let onChangeEvent = (e) => {
-        let text =e.target.value;
-        let action = onChangeActionCreator(text);
-        props.dispatch(action)
+        props.onChange(e);
+    }
+    
+    let postMessage = () => {
+        props.PostMessage();
     }
 
     return <div className={module.Content}>
@@ -28,7 +30,7 @@ function SelfPosts(props) {
                     }}>Delete
                     </button>
                 </div>
-                {props.PostMessage.map(e => (<Post message={e.message} like={e.like}/>))}
+                {postMessage}
             </div>
         </div>
     </div>
