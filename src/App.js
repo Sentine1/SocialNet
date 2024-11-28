@@ -22,7 +22,7 @@ function App(props) {
                            element={<Dialog messagePage={props.state.messagePage}
                                             dispatch={props.dispatch}/>}/>
                     <Route path='/profile'
-                           element={<Content profilePage={props.state.profilePage} dispatch={props.dispatch}/>}/>
+                           element={<Content store = {props.store}/>}/>
                     <Route path='/news' element={<News/>}/>
                     <Route path='/audios' element={<Audio/>}/>
                     <Route path='/videos' element={<Video/>}/>

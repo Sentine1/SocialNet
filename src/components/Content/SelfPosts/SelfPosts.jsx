@@ -1,7 +1,6 @@
 import React from 'react';
 import module from './SelfPosts.module.css'
 import Post from "./Post/Post";
-import {addPostActionCreator, onChangeActionCreator} from "../../../redux/ProfileReducer";
 
 function SelfPosts(props) {
     let newPostElement = React.createRef();
@@ -10,11 +9,7 @@ function SelfPosts(props) {
     }
     
     let onChangeEvent = (e) => {
-        props.onChange(e);
-    }
-    
-    let postMessage = () => {
-        props.PostMessage();
+        props.onChange(e.target.value);
     }
 
     return <div className={module.Content}>
@@ -30,7 +25,7 @@ function SelfPosts(props) {
                     }}>Delete
                     </button>
                 </div>
-                {postMessage}
+                {props.posts.map(e => (<Post message={e.message} like={e.like}/>))}
             </div>
         </div>
     </div>

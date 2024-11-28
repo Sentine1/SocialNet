@@ -1,24 +1,24 @@
 import React from 'react';
 import {addPostActionCreator, onChangeActionCreator} from "../../../redux/ProfileReducer";
 import SelfPosts from "./SelfPosts";
-import Post from "./Post/Post";
 
-function SelfPostsContainer(props) {
+const SelfPostsContainer = (props) =>{
+    let state = props.store.getState();
+    let posts = state.profilePage.PostMessage;
+    let newText  = state.profilePage.newPostText;
+
     let addPost = () => {
-        props.dispatch(addPostActionCreator())
+        props.store.dispatch(addPostActionCreator())
     }
 
-    let onChangeEvent = (e) => {
-        let text = e.target.value;
+    let onChangeEvent = (text) => {
         let action = onChangeActionCreator(text);
-        props.dispatch(action)
+        props.store.dispatch(action)
     }
-
-    let newPostText = props._state.profilePage.newPostText;
-
-    let propsMessage = props._state.profilePage.PostMessage.map(e => (<Post message={e.message} like={e.like}/>));
 
     return (
-        <SelfPosts addPost={addPost} onChange={onChangeEvent} newPostText={newPostText} propsMessage={propsMessage}/>
+        <SelfPosts addPost={addPost} onChange={onChangeEvent} newPostText={newText} posts={posts}/>
     )
 }
+
+export default SelfPostsContainer;
