@@ -34,8 +34,9 @@ function Menu(props) {
         <br/>
         <br/>
         <div className={module.Items}>
-            <NavLink to="/friends"><a href=""
-                                      className={props.FriendsData.names}>{props.FriendsData.ava}</a></NavLink>
+            {props.friends.map(e => <NavLink to="/friends"><a href=""
+                                                              className={e.names}> <img src={e.ava}
+                                                                                        alt={e.name + " avatar"}/> </a></NavLink>)}
         </div>
     </nav>
 }

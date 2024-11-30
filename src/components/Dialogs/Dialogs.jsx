@@ -1,13 +1,14 @@
 import React from "react";
-import Menu from "./DialogItems/DialogMenu";
 import Content from "./DialogItems/DialogContent";
 import module from "./Dialogs.module.css";
+import DialogMenuContainer from "./DialogItems/DialogMenuContainer";
+import DialogContentContainer from "./DialogItems/DialogContentContainer";
 
 function Dialogs(props) {
     return (
         <div className={module.Dialogs}>
-            <Menu className={module.Menu} PersonList={props.messagePage.PersonList}/>
-            <Content className={module.Content} messagePage={props.messagePage} dispatch={props.dispatch}/>
+            <DialogMenuContainer className={module.Menu} store = {props.store}/>
+            <DialogContentContainer className={module.Content} store = {props.store}/>
         </div>
     )
 }

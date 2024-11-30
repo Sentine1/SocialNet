@@ -1,29 +1,26 @@
 import React from "react";
 import module from "./DialogContent.module.css"
 import Items from "./DialogContentItems"
-import {addMessageDialogActionCreator, onChangeDialogActionCreator} from "../../../redux/MessageReducer";
 
 function DialogContent(props) {
     let newMessageElement = React.createRef();
-    let messages = props.messagePage.Message.map(e => <Items message={e.message} direction={e.direction}/>);
     let addPost = () => {
-        props.dispatch(addMessageDialogActionCreator())
+        props.addPost();
     }
 
     let onChangeEvent = () => {
         let text = newMessageElement.current.value;
-        let action = onChangeDialogActionCreator(text);
-        props.dispatch(action)
+        props.onChangeEvent(text);
     }
 
     return (
         <div className={module.Content}>
             <div>
-                {messages}
+                {props.messages}
             </div>
             <div>
                 <textarea ref={newMessageElement} onChange={onChangeEvent}
-                          value={props.messagePage.textMessage} placeholder="Enter message"></textarea>
+                          value={props.newMessage} placeholder="Enter message"></textarea>
             </div>
             <div>
                 <button onClick={addPost}>pOst</button>

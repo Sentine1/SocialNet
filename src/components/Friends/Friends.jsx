@@ -1,12 +1,12 @@
 import React from "react";
 import module from "./Friends.module.css"
-import Menu from "./FriendsItems/Menu"
 import Content from "./FriendsItems/Content";
+import MenuContainer from "./FriendsItems/MenuContainer";
 
 function Friends (props){
     return(
         <div className={module.Friends}>
-            <Menu data={props.state}/>
+            <MenuContainer store = {props.store}/>
             <Content />
         </div>
     )
