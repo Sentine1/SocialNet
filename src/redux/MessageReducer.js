@@ -29,7 +29,7 @@ const MessageReducer = (state = initialState, action) => {
                 direction: "to"
             };
             state.Message.push(newMessage);
-            state.textMessage = "Start  message";
+            state.textMessage = "";
             return state;
 
         case EDIT_MESSAGE_TEXT:

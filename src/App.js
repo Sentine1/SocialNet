@@ -12,25 +12,23 @@ import {Route, Routes} from "react-router-dom";
 import MenuContainer from "./components/Menu/MenuContainer";
 
 function App(props) {
-    return (
-        <div className='app-wrapper'>
+    return (<div className='app-wrapper'>
             <Header/>
-            <MenuContainer store = {props.store}/>
+            <MenuContainer store={props.store}/>
             <div className='app-wrapper-content'>
                 <Routes>
                     <Route path='/dialogs'
-                           element={<Dialog store = {props.store}/>}/>
+                           element={<Dialog/>}/>
                     <Route path='/profile'
-                           element={<Content store = {props.store}/>}/>
+                           element={<Content store={props.store}/>}/>
                     <Route path='/news' element={<News/>}/>
                     <Route path='/audios' element={<Audio/>}/>
                     <Route path='/videos' element={<Video/>}/>
-                    <Route path='/friends' element={<Friends store = {props.store}/>}/>
+                    <Route path='/friends' element={<Friends store={props.store}/>}/>
                     <Route path='/settings' element={<Settings/>}/>
                 </Routes>
             </div>
-        </div>
-    );
+        </div>);
 }
 
 export default App;

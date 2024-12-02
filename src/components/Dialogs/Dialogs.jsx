@@ -7,8 +7,8 @@ import DialogContentContainer from "./DialogItems/DialogContentContainer";
 function Dialogs(props) {
     return (
         <div className={module.Dialogs}>
-            <DialogMenuContainer className={module.Menu} store = {props.store}/>
-            <DialogContentContainer className={module.Content} store = {props.store}/>
+            <DialogMenuContainer className={module.Menu}/>
+            <DialogContentContainer className={module.Content}/>
         </div>
     )
 }
