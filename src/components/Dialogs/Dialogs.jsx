@@ -1,5 +1,4 @@
 import React from "react";
-import Content from "./DialogItems/DialogContent";
 import module from "./Dialogs.module.css";
 import DialogMenuContainer from "./DialogItems/DialogMenuContainer";
 import DialogContentContainer from "./DialogItems/DialogContentContainer";

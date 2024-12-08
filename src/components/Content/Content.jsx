@@ -1,6 +1,7 @@
 import React from 'react';
 import module from './Content.module.css'
 import SelfPostsContainer from './SelfPosts/SelfPostsContainer'
+
 function Content(props) {
     return <div>
         <div className={module.Content}>
@@ -10,7 +11,7 @@ function Content(props) {
             <img src="Ava.jpg" alt="Avatar"/>
             Profile Data
         </div>
-        <SelfPostsContainer store = {props.store}/>
+        <SelfPostsContainer/>
     </div>
 }
 
