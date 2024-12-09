@@ -9,7 +9,7 @@ function SelfPosts(props) {
     }
     
     let onChangeEvent = (e) => {
-        props.onChange(e.target.value);
+        props.onChangeEvent(e.target.value);
     }
 
     return <div className={module.Content}>

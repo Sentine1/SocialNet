@@ -18,13 +18,13 @@ import {connect} from "react-redux";
 //     }
 //
 //     return (
-//         <SelfPosts addPost={addPost} onChange={onChangeEvent} newPostText={newText} posts={posts}/>
+//         <SelfPosts addPost={addPost} onChangeEvent={onChangeEvent} newPostText={newText} posts={posts}/>
 //     )
 // }
 
 const mapStateToProps = (state) => {
     return {
-        newText: state.profilePage.newPostText,
+        newPostText: state.profilePage.newPostText,
         posts: state.profilePage.PostMessage
     }
 };
