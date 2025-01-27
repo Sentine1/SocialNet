@@ -1,8 +1,8 @@
 ﻿import React from "react";
 import module from "./Сontent.module.css"
 
-function Content (){
-    return(
+function Content() {
+    return (
         <div className={module.Content}>
             Content:
             <div>Audio one</div>

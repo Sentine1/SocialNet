@@ -3,11 +3,11 @@ import module from "./Audios.module.css"
 import Menu from "./Items/Menu"
 import Content from "./Items/Content";
 
-function Dialogs (){
-    return(
+function Dialogs() {
+    return (
         <div className={module.Dialogs}>
-            <Menu />
-            <Content />
+            <Menu/>
+            <Content/>
         </div>
     )
 }

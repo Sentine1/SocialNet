@@ -1,8 +1,8 @@
 ﻿import React from "react";
 import module from "./Menu.module.css"
 
-function Menu (){
-    return(
+function Menu() {
+    return (
         <div className={module.Menu}>
             <div>Person one</div>
             <div>Person two</div>

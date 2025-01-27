@@ -1,4 +1,3 @@
-import module from "./DialogContent.module.css"
 const DialogContentItems = (props) => {
     return <div>
         <div className={props.direction}>{props.message}</div>

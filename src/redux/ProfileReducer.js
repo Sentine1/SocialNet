@@ -17,16 +17,17 @@ const ProfileReducer = (state = initialState, action) => {
                 message: state.newPostText,
                 like: 1
             }
-            let stateCopy = {...state};
-            stateCopy.PostMessage = [...state.PostMessage];
-            stateCopy.PostMessage.push(newPost);
-            stateCopy.newPostText = "";
-            return stateCopy;
+            return{
+                ...state,
+                PostMessage:[...state.PostMessage, newPost],
+                newPostText: ""
+            };
         }
         case EDIT_TEXT: {
-            let stateCopy = {...state};
-            stateCopy.newPostText = action.text;
-            return stateCopy;
+            return  {
+                ...state,
+                newPostText: action.text
+            };
         }
         default: {
             return state;

@@ -49,15 +49,15 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-    
-    dispatch(action){
+
+    dispatch(action) {
         debugger;
-        this._state.messagePage = MessageReducer(this._state.messagePage,action)
-        this._state.profilePage = ProfileReducer(this._state.profilePage,action)
-        this._state.FriendsData = FriendsReducer(this._state.FriendsData,action)
-        
+        this._state.messagePage = MessageReducer(this._state.messagePage, action)
+        this._state.profilePage = ProfileReducer(this._state.profilePage, action)
+        this._state.FriendsData = FriendsReducer(this._state.FriendsData, action)
+
         this._callSubscriber(this._state);
-        }
+    }
 }
 
 window.store = store;

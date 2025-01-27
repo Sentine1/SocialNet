@@ -1,10 +1,9 @@
 import React from "react";
 import module from "./DialogMenu.module.css";
-import MenuItems from "./DialogMenuItems";
 
-function DialogMenu (props){
+function DialogMenu(props) {
 
-    return(     
+    return (
         <div className={module.Menu}>
             {props.data}
         </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import module from "./DialogContent.module.css"
-import Items from "./DialogContentItems"
 
 function DialogContent(props) {
     let newMessageElement = React.createRef();

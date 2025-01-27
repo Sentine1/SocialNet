@@ -20,25 +20,23 @@ let initialState = {
     textMessage: '',
 };
 const MessageReducer = (state = initialState, action) => {
-
+    let stateCopy;
     switch (action.type) {
 
         case ADD_MESSAGE: {
-            let stateCopy = {...state};
-            let newMessage = {
-                message: state.textMessage,
-                direction: "to"
+            let textMessage = state.textMessage;
+            return {
+                ...state,
+                textMessage: "",
+                Message: [...state.Message, {direction: "to", message: textMessage}],
             };
-            stateCopy.Message = [...state.Message]
-            stateCopy.Message.push(newMessage);
-            stateCopy.textMessage = "";
-            return stateCopy;
         }
 
         case EDIT_MESSAGE_TEXT: {
-            let stateCopy = {...state};
-            stateCopy.textMessage = action.text;
-            return stateCopy;
+            return {
+                ...state,
+                textMessage: action.text
+            };
         }
         default:
             return state;

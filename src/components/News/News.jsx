@@ -3,11 +3,11 @@ import module from "./News.module.css"
 import Menu from "./NewsItems/Menu"
 import Content from "./NewsItems/Content";
 
-function News (){
-    return(
+function News() {
+    return (
         <div className={module.Dialogs}>
-            <Menu />
-            <Content />
+            <Menu/>
+            <Content/>
         </div>
     )
 }

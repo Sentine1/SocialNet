@@ -1,8 +1,8 @@
 ﻿import React from "react";
 import module from "./Menu.module.css"
 
-function DialogMenu (){
-    return(
+function DialogMenu() {
+    return (
         <div className={module.Menu}>
             <div>
                 <a href="/Theme_one">Theme one</a>

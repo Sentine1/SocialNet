@@ -4,10 +4,10 @@ import Post from "./Post/Post";
 
 function SelfPosts(props) {
     let newPostElement = React.createRef();
-    let addPost = () =>{
+    let addPost = () => {
         props.addPost();
     }
-    
+
     let onChangeEvent = (e) => {
         props.onChangeEvent(e.target.value);
     }

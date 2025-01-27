@@ -3,11 +3,11 @@ import module from "./Videos.module.css"
 import Menu from "./VideosItems/Menu"
 import Content from "./VideosItems/Content";
 
-function Videos (){
-    return(
+function Videos() {
+    return (
         <div className={module.Dialogs}>
-            <Menu />
-            <Content />
+            <Menu/>
+            <Content/>
         </div>
     )
 }
