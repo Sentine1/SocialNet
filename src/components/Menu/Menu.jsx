@@ -16,6 +16,9 @@ function Menu(props) {
             <NavLink to="/friends">Friends</NavLink>
         </div>
         <div className={module.Items}>
+            <NavLink to="/users">Users</NavLink>
+        </div>
+        <div className={module.Items}>
             <NavLink to="/videos">Videos</NavLink>
         </div>
         <div className={module.Items}>

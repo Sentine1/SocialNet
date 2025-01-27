@@ -10,6 +10,7 @@ import Friends from './components/Friends/Friends'
 import Settings from './components/Settings/Settings'
 import {Route, Routes} from "react-router-dom";
 import MenuContainer from "./components/Menu/MenuContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 function App(props) {
     return (<div className='app-wrapper'>
@@ -25,6 +26,7 @@ function App(props) {
                 <Route path='/audios' element={<Audio/>}/>
                 <Route path='/videos' element={<Video/>}/>
                 <Route path='/friends' element={<Friends/>}/>
+                <Route path='/users' element={<UsersContainer/>}/>
                 <Route path='/settings' element={<Settings/>}/>
             </Routes>
         </div>

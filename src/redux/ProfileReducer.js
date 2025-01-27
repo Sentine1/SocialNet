@@ -3,10 +3,10 @@ const EDIT_TEXT = "EDIT-TEXT";
 
 let initialState = {
     PostMessage: [
-        {message: "Test message 1", like: 40},
-        {message: "Test message 2", like: 20},
-        {message: "Test message 5", like: 40},
-        {message: "Test message 3", like: 60}],
+        {id: 1, message: "Test message 1", like: 40},
+        {id: 2, message: "Test message 2", like: 20},
+        {id: 3, message: "Test message 5", like: 40},
+        {id: 4, message: "Test message 3", like: 60}],
     newPostText: '',
 };
 const ProfileReducer = (state = initialState, action) => {
@@ -17,14 +17,14 @@ const ProfileReducer = (state = initialState, action) => {
                 message: state.newPostText,
                 like: 1
             }
-            return{
+            return {
                 ...state,
-                PostMessage:[...state.PostMessage, newPost],
+                PostMessage: [...state.PostMessage, newPost],
                 newPostText: ""
             };
         }
         case EDIT_TEXT: {
-            return  {
+            return {
                 ...state,
                 newPostText: action.text
             };

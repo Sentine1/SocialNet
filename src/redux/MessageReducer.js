@@ -10,12 +10,12 @@ let initialState = {
         {id: 5, name: 'person five'},
     ],
     Message: [
-        {message: "Message one", direction: "from"},
-        {message: "Answer one", direction: "to"},
-        {message: "Message two", direction: "from"},
-        {message: "Message Three", direction: "from"},
-        {message: "Answer two", direction: "to"},
-        {message: "Message Four", direction: "from"}
+        {id: 1, message: "Message one", direction: "from"},
+        {id: 2, message: "Answer one", direction: "to"},
+        {id: 3, message: "Message two", direction: "from"},
+        {id: 4, message: "Message Three", direction: "from"},
+        {id: 5, message: "Answer two", direction: "to"},
+        {id: 6, message: "Message Four", direction: "from"}
     ],
     textMessage: '',
 };
