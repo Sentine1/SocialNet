@@ -1,7 +1,38 @@
 .Users {
 }
 
+.Left {
+    text-align: left;
+}
+
+.Right {
+    padding-right: 10%;
+    text-align: right;
+}
+
+.Center {
+    padding-left: 35px;
+}
+
+.Button {
+    padding-left: 30%;
+}
+
 .UsersPhoto {
     width: 100px;
     height: 100px;
+    padding: 10px;
+}
+
+.table {
+    border-radius: 30px;
+    border: 3px solid rgb(25 25 25);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+}
+
+.ViewElement {
+    padding: 5px;
+    border-radius: 30px;
 }

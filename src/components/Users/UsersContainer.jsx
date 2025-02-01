@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import Users from "./Users";
+import Users, {UserCartView} from "./Users";
 import {followAC, setUsersAC, unfollowAC} from "../../redux/UsersReducer";
 
 const mapStateToProps = (state) => {
