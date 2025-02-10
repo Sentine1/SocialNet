@@ -4,10 +4,16 @@ import axios from "axios";
 
 class Users extends React.Component {
     componentDidMount() {
-        alert('Error mount 2 times ToDo  fix');
-        axios.get("https://social-network.samuraijs.com/api/1.0/users", {params: {count: 2}})
+        //alert('Strict Mode call 2 get called');
+        axios.get("https://social-network.samuraijs.com/api/1.0/users", {
+            params: {
+                page: this.props.currentPage,
+                count: this.props.pageSize
+            }
+        })
             .then(response => {
                 this.props.setUsers(response.data.items);
+                this.props.setTotalCount(response.data.totalCount > 10 ? 300 : response.data.totalCount)
             });
     }
 
@@ -17,10 +23,34 @@ class Users extends React.Component {
                 this.props.setUsers(response.data.items);
             });
     }
+    onPageChange = (e) => {
+        this.props.setCurrentPage(e);
+        axios.get("https://social-network.samuraijs.com/api/1.0/users", {params: {page: e, count: this.props.pageSize}})
+            .then(response => {
+                this.props.setUsers(response.data.items);
+            });
+    }
 
     render() {
+        let pageCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+        let pages = [];
+        for (let i = 1; i <= pageCount; i++) {
+            pages.push(i);
+        }
         return (
             <div className={module.Users}>
+                <div>
+                    {
+                        pages.map(p => {
+                            return <span className={this.props.currentPage === p && module.selectedPage}
+                                         onClick={() => {
+                                             this.onPageChange(p)
+                                         }}>{p} </span>
+                        })}
+                    <span onClick={() => {
+                        alert('next 10 page');
+                    }}>... </span>
+                </div>
                 {
                     this.props.users.map(e => {
                         return <div key={e.id}>
