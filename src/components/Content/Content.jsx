@@ -1,17 +1,12 @@
 import React from 'react';
 import module from './Content.module.css'
 import SelfPostsContainer from './SelfPosts/SelfPostsContainer'
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 function Content(props) {
     return <div>
-        <div className={module.Content}>
-            <img src="dragonball.png" alt="main page"/>
-        </div>
-        <div className={module.Profile}>
-            <img src="Ava.jpg" alt="Avatar"/>
-            Profile Data
-        </div>
-        <SelfPostsContainer/>
+        <ProfileInfo profile={props.profile}/>
+        <SelfPostsContainer className={module.Profile}/>
     </div>
 }
 

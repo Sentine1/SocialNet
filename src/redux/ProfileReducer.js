@@ -1,5 +1,6 @@
 const ADD_POST = "ADD-POST";
 const EDIT_TEXT = "EDIT-TEXT";
+const SET_USER_PROFILE = "SET_USER_PROFILE";
 
 let initialState = {
     PostMessage: [
@@ -8,6 +9,7 @@ let initialState = {
         {id: 3, message: "Test message 5", like: 40},
         {id: 4, message: "Test message 3", like: 60}],
     newPostText: '',
+    profile: null
 };
 const ProfileReducer = (state = initialState, action) => {
 
@@ -29,6 +31,12 @@ const ProfileReducer = (state = initialState, action) => {
                 newPostText: action.text
             };
         }
+        case SET_USER_PROFILE:{
+            return {
+                ...state,
+                profile:action.profile
+            }
+        }
         default: {
             return state;
         }
@@ -36,6 +44,7 @@ const ProfileReducer = (state = initialState, action) => {
 }
 
 export const addPostActionCreator = () => ({type: ADD_POST})
+export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 
 export const onChangeActionCreator = (text) => {
     return {type: EDIT_TEXT, text: text};

@@ -5,11 +5,10 @@ import {
 import React from "react";
 import axios from "axios";
 import Users from "./Users";
-import loader from "../../assets/images/LoaderGuy.gif"
+import Preloader from "../../assets/Preloader";
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
-        //alert('Strict Mode call 2 get called');
         this.props.setIsFetching(true);
         axios.get("https://social-network.samuraijs.com/api/1.0/users", {
             params: {
@@ -44,7 +43,7 @@ class UsersAPIComponent extends React.Component {
 
         return <>
             <div>
-                {this.props.isFetching ? <img src={loader} alt="loader svg"/> : null}
+                {this.props.isFetching ? <Preloader/> : null}
             </div>
             <Users
                 totalUsersCount={this.props.totalUsersCount}
@@ -70,29 +69,13 @@ const mapStateToProps = (state) => {
     }
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (UserId) => {
-//             dispatch(followAC(UserId));
-//         },
-//
-//         unfollow: (UserId) => {
-//             dispatch(unfollowAC(UserId));
-//         },
-//
-//         setUsers: (users) => {
-//             dispatch(setUsersAC(users))
-//         }, setCurrentPage: (pageNumber) => {
-//             dispatch(setCurrentPageAC(pageNumber))
-//         }, setTotalCount: (usersCount) => {
-//             dispatch(setTotalCountAC(usersCount))
-//         }, setIsFetching: (isFetching) => {
-//             dispatch(setIsFetchingAC(isFetching))
-//         }
-//     }
-// };
-
-const UsersContainer = connect(mapStateToProps,
-    {follow, unfollow, setUsers, setCurrentPage, setTotalCount, setIsFetching})(UsersAPIComponent);
+const UsersContainer = connect(mapStateToProps, {
+    follow,
+    unfollow,
+    setUsers,
+    setCurrentPage,
+    setTotalCount,
+    setIsFetching
+})(UsersAPIComponent);
 
 export default UsersContainer

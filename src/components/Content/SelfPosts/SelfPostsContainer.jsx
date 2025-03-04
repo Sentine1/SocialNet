@@ -2,25 +2,6 @@ import {addPostActionCreator, onChangeActionCreator} from "../../../redux/Profil
 import SelfPosts from "./SelfPosts";
 import {connect} from "react-redux";
 
-// const oldSelfPostsContainer = (props) => {
-//     let state = props.store.getState();
-//     let posts = state.profilePage.PostMessage;
-//     let newText = state.profilePage.newPostText;
-//
-//     let addPost = () => {
-//         props.store.dispatch(addPostActionCreator())
-//     }
-//
-//     let onChangeEvent = (text) => {
-//         let action = onChangeActionCreator(text);
-//         props.store.dispatch(action)
-//     }
-//
-//     return (
-//         <SelfPosts addPost={addPost} onChangeEvent={onChangeEvent} newPostText={newText} posts={posts}/>
-//     )
-// }
-
 const mapStateToProps = (state) => {
     return {
         newPostText: state.profilePage.newPostText,

@@ -11,6 +11,7 @@ import Settings from './components/Settings/Settings'
 import {Route, Routes} from "react-router-dom";
 import MenuContainer from "./components/Menu/MenuContainer";
 import UsersContainer from "./components/Users/UsersContainer";
+import ContentContainer from "./components/Content/ContentContainer";
 
 function App(props) {
     return (<div className='app-wrapper'>
@@ -21,7 +22,7 @@ function App(props) {
                 <Route path='/dialogs'
                        element={<Dialog/>}/>
                 <Route path='/profile'
-                       element={<Content/>}/>
+                       element={<ContentContainer/>}/>
                 <Route path='/news' element={<News/>}/>
                 <Route path='/audios' element={<Audio/>}/>
                 <Route path='/videos' element={<Video/>}/>

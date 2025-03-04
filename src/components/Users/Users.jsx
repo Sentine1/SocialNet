@@ -1,5 +1,6 @@
 import React from "react";
 import module from "./Users.module.css"
+import {NavLink} from "react-router-dom";
 
 let Users = (props) => {
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -26,9 +27,11 @@ let Users = (props) => {
                     <table width={"60%"} className={module.table}>
                         <tbody>
                         <tr>
-                            <td rowSpan={3}><img className={module.UsersPhoto}
-                                                 src={e.photoUrl ? e.photoUrl : 'ava1.png'}
-                                                 alt={e.name + " avatar"}/></td>
+                            <td rowSpan={3}><NavLink to={'/profile/'+e.id}>
+                                <img className={module.UsersPhoto}
+                                     src={e.photoUrl ? e.photoUrl : 'ava1.png'}
+                                     alt={e.name + " avatar"}/>
+                            </NavLink></td>
                             <td className={module.Left}>{e.name} </td>
                             <td className={module.Right}>{"e.location.country"}</td>
                         </tr>
