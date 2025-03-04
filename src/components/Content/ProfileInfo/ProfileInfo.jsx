@@ -1,13 +1,14 @@
 import React from 'react';
 import module from './ProfileInfo.module.css'
-import Preloader from "../../../assets/Preloader";
+import Preloader from '../../../assets/Preloader';
+
 
 function ProfileInfo(props) {
     if (!props.profile)
         return <Preloader/>
     return (<div>
         <div className={module.Content}>
-            <img src="dragonball.png" alt="main page"/>
+            <img src='../../../../public/dragonball.png' alt="main page"/>
         </div>
         <div className={module.Profile}>
             <img src={props.profile.photos.large} alt="Avatar"/>
@@ -18,7 +19,7 @@ function ProfileInfo(props) {
             <div>lookingForAJobDescription = {props.profile.lookingForAJobDescription}</div>
             <table>
                 <tbody>
-                <td> contacts : </td>
+                <td> contacts :</td>
                 <td>
                     {props.profile.contacts.facebook ? <div>facebook = {props.profile.contacts.facebook}</div> : null}
                     {props.profile.contacts.website ? <div>website = {props.profile.contacts.website}</div> : null}
