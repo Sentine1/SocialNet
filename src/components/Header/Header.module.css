@@ -2,9 +2,13 @@
     grid-area: h;
     background-color: green;
     display: grid;
-    grid-template-columns: 2fr  9fr;
+    grid-template-columns: 2fr  5fr 1fr;
 }
 
 .header img {
     width: 50px;
+}
+
+.loginBlock{
+    float: right;
 }

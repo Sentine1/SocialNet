@@ -12,10 +12,11 @@ import {Route, Routes} from "react-router-dom";
 import MenuContainer from "./components/Menu/MenuContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ContentContainer from "./components/Content/ContentContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 function App(props) {
     return (<div className='app-wrapper'>
-        <Header/>
+        <HeaderContainer/>
         <MenuContainer/>
         <div className='app-wrapper-content'>
             <Routes>
