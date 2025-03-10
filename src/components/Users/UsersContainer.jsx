@@ -11,6 +11,7 @@ class UsersAPIComponent extends React.Component {
     componentDidMount() {
         this.props.setIsFetching(true);
         axios.get("https://social-network.samuraijs.com/api/1.0/users", {
+            withCredentials: true,
             params: {
                 page: this.props.currentPage, count: this.props.pageSize
             }
@@ -24,7 +25,7 @@ class UsersAPIComponent extends React.Component {
 
     getMoreUsers = () => {
         this.props.setIsFetching(true);
-        axios.get("https://social-network.samuraijs.com/api/1.0/users", {params: {count: 5}})
+        axios.get("https://social-network.samuraijs.com/api/1.0/users", {withCredentials: true, params: {count: 5}})
             .then(response => {
                 this.props.setUsers(response.data.items);
             });
@@ -32,7 +33,10 @@ class UsersAPIComponent extends React.Component {
     onPageChange = (e) => {
         this.props.setIsFetching(true);
         this.props.setCurrentPage(e);
-        axios.get("https://social-network.samuraijs.com/api/1.0/users", {params: {page: e, count: this.props.pageSize}})
+        axios.get("https://social-network.samuraijs.com/api/1.0/users", {
+            withCredentials: true,
+            params: {page: e, count: this.props.pageSize}
+        })
             .then(response => {
                 this.props.setIsFetching(false);
                 this.props.setUsers(response.data.items);
