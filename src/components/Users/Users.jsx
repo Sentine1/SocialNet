@@ -2,6 +2,7 @@ import React from "react";
 import module from "./Users.module.css"
 import {NavLink} from "react-router-dom";
 import axios from "axios";
+import {userFollow, usersAPI, userUnfollow} from "../../api/api";
 
 let Users = (props) => {
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -48,19 +49,13 @@ let Users = (props) => {
                         </tr>
                         <tr>
                             <td className={module.Center}>{e.followed ? <button onClick={() => {
-                                axios.delete("https://social-network.samuraijs.com/api/1.0/users", {
-                                    withCredentials: true
-                                })
-                                    .then(response => {
+                                    usersAPI.userUnfollow().then(response => {
                                         if (response.data.resultCode === 0) {
                                             props.unfollow(e.id)
                                         }
                                     })
                             }}>follow</button> : <button onClick={() => {
-                                axios.post("https://social-network.samuraijs.com/api/1.0/users", {}, {
-                                    withCredentials: true
-                                })
-                                    .then(response => {
+                                    usersAPI.userFollow().then(response => {
                                         if (response.data.resultCode === 0) {
                                             props.follow(e.id)
                                         }

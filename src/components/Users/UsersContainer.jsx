@@ -3,43 +3,32 @@ import {
     follow, setCurrentPage, setIsFetching, setTotalCount, setUsers, unfollow
 } from "../../redux/UsersReducer";
 import React from "react";
-import axios from "axios";
 import Users from "./Users";
 import Preloader from "../../assets/Preloader";
+import {getUsers, usersAPI} from "../../api/api";
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
         this.props.setIsFetching(true);
-        axios.get("https://social-network.samuraijs.com/api/1.0/users", {
-            withCredentials: true,
-            params: {
-                page: this.props.currentPage, count: this.props.pageSize
-            }
-        })
-            .then(response => {
+        usersAPI.getUsers(this.props.currentPage,this.props.pageSize).then(data => {
                 this.props.setIsFetching(false)
-                this.props.setUsers(response.data.items);
-                this.props.setTotalCount(response.data.totalCount > 10 ? 300 : response.data.totalCount)
+                this.props.setUsers(data.items);
+                this.props.setTotalCount(data.totalCount > 10 ? 300 : data.totalCount)
             });
     }
 
     getMoreUsers = () => {
         this.props.setIsFetching(true);
-        axios.get("https://social-network.samuraijs.com/api/1.0/users", {withCredentials: true, params: {count: 5}})
-            .then(response => {
-                this.props.setUsers(response.data.items);
+        usersAPI.getUsers(this.props.currentPage,5).then(data => {
+                this.props.setUsers(data.items);
             });
     }
     onPageChange = (e) => {
         this.props.setIsFetching(true);
         this.props.setCurrentPage(e);
-        axios.get("https://social-network.samuraijs.com/api/1.0/users", {
-            withCredentials: true,
-            params: {page: e, count: this.props.pageSize}
-        })
-            .then(response => {
+        usersAPI.getUsers(e,this.props.pageSize).then(data => {
                 this.props.setIsFetching(false);
-                this.props.setUsers(response.data.items);
+                this.props.setUsers(data.items);
             });
     }
 
