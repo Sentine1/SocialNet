@@ -10,7 +10,6 @@ let Users = (props) => {
     for (let i = 1; i <= pageCount; i++) {
         pages.push(i);
     }
-
     return (<div className={module.Users}>
         <div>
             {pages.map(p => {
@@ -48,19 +47,25 @@ let Users = (props) => {
                             <td></td>
                         </tr>
                         <tr>
-                            <td className={module.Center}>{e.followed ? <button onClick={() => {
+                            <td className={module.Center}>{e.followed ?
+                                <button disabled={props.followingInProgress.some(id => id === e.id)} onClick={() => {
+                                    props.toggleFollowingProgress(true, e.id);
                                     usersAPI.userUnfollow().then(response => {
                                         if (response.data.resultCode === 0) {
                                             props.unfollow(e.id)
                                         }
+                                        props.toggleFollowingProgress(false, e.id);
                                     })
-                            }}>follow</button> : <button onClick={() => {
+                                }}>follow</button> :
+                                <button disabled={props.followingInProgress.some(id => id === e.id)} onClick={() => {
+                                    props.toggleFollowingProgress(true, e.id);
                                     usersAPI.userFollow().then(response => {
                                         if (response.data.resultCode === 0) {
                                             props.follow(e.id)
                                         }
+                                        props.toggleFollowingProgress(false, e.id);
                                     })
-                            }}>unfollow</button>}
+                                }}>unfollow</button>}
                             </td>
                             <td></td>
                             <td></td>
