@@ -1,8 +1,6 @@
 import React from "react";
 import module from "./Users.module.css"
 import {NavLink} from "react-router-dom";
-import axios from "axios";
-import {userFollow, usersAPI, userUnfollow} from "../../api/api";
 
 let Users = (props) => {
     let pageCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -48,24 +46,15 @@ let Users = (props) => {
                         </tr>
                         <tr>
                             <td className={module.Center}>{e.followed ?
-                                <button disabled={props.followingInProgress.some(id => id === e.id)} onClick={() => {
-                                    props.toggleFollowingProgress(true, e.id);
-                                    usersAPI.userUnfollow().then(response => {
-                                        if (response.data.resultCode === 0) {
+                                <button disabled={props.followingInProgress.some(id => id === e.id)}
+                                        onClick={() => {
                                             props.unfollow(e.id)
                                         }
-                                        props.toggleFollowingProgress(false, e.id);
-                                    })
-                                }}>follow</button> :
-                                <button disabled={props.followingInProgress.some(id => id === e.id)} onClick={() => {
-                                    props.toggleFollowingProgress(true, e.id);
-                                    usersAPI.userFollow().then(response => {
-                                        if (response.data.resultCode === 0) {
+                                        }>follow</button> :
+                                <button disabled={props.followingInProgress.some(id => id === e.id)}
+                                        onClick={() => {
                                             props.follow(e.id)
-                                        }
-                                        props.toggleFollowingProgress(false, e.id);
-                                    })
-                                }}>unfollow</button>}
+                                        }}>unfollow</button>}
                             </td>
                             <td></td>
                             <td></td>
