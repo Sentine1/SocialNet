@@ -1,5 +1,6 @@
 import React from "react";
 import module from "./DialogContent.module.css"
+import {Navigate} from "react-router-dom";
 
 function DialogContent(props) {
     let newMessageElement = React.createRef();
@@ -12,6 +13,8 @@ function DialogContent(props) {
         props.onChangeEvent(text);
     }
 
+    if (!props.isAuth)
+        return <Navigate to={'/login'}/>;
     return (
         <div className={module.Content}>
             <div>

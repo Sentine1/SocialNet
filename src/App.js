@@ -13,6 +13,7 @@ import MenuContainer from "./components/Menu/MenuContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ContentContainer from "./components/Content/ContentContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import Login from "./components/Login/Login";
 
 function App(props) {
     return (<div className='app-wrapper'>
@@ -30,6 +31,7 @@ function App(props) {
                 <Route path='/friends' element={<Friends/>}/>
                 <Route path='/users' element={<UsersContainer/>}/>
                 <Route path='/settings' element={<Settings/>}/>
+                <Route path='/login' element={<Login/>}/>
             </Routes>
         </div>
     </div>);
