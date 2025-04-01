@@ -24,15 +24,16 @@ export const usersAPI = {
 
     userUnfollow(userId) {
         return instance.delete(`users/${userId}`)
+    },
+    getProfile(userId) {
+        return axios.get(`profile/` + userId, {
+            params: {}
+        });
     }
 }
 
 export const authAPI = {
-    authMe(currentPage, pageSize) {
-        return instance.get("auth/me", {
-            params: {
-                page: currentPage, count: pageSize
-            }
-        })
+    authMe() {
+        return instance.get(`auth/me`, {})
     }
 }
