@@ -26,7 +26,7 @@ export const usersAPI = {
         return instance.delete(`users/${userId}`)
     },
     getProfile(userId) {
-        return axios.get(`profile/` + userId, {
+        return axios.get(`profile/${userId}`, {
             params: {}
         });
     }
