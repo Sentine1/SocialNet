@@ -2,7 +2,7 @@ import React from 'react';
 import Content from "./Content";
 import {connect} from "react-redux";
 import {getUserProfile} from "../../redux/ProfileReducer";
-import {NavLink, useLocation, useNavigate, useParams} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {withAuthRedirect} from "../../hoc/AuthRedirect";
 
 class ContentContainer extends React.Component {

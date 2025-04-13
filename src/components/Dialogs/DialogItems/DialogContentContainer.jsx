@@ -3,8 +3,6 @@ import Items from "./DialogContentItems"
 import DialogContent from "./DialogContent";
 import {addMessageDialogActionCreator, onChangeDialogActionCreator} from "../../../redux/MessageReducer";
 import {connect} from "react-redux";
-import {NavLink} from "react-router-dom";
-import {withAuthRedirect} from "../../../hoc/AuthRedirect";
 
 const mapStateToProps = (state) => {
     return {
@@ -25,7 +23,5 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-let AuthRedirectComponent = withAuthRedirect(DialogContent);
-
-const DialogContentContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent);
+const DialogContentContainer = connect(mapStateToProps, mapDispatchToProps)(DialogContent);
 export default DialogContentContainer;

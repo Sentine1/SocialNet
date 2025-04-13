@@ -7,6 +7,7 @@ export const withAuthRedirect = (Component) => {
     let mapStateToPropsForRedirect = (state) => ({
         isAuth: state.auth.isAuth
     });
+
     class RedirectComponent extends React.Component {
         render() {
             if (!this.props.isAuth) return <NavLink to={'/login'}/>;

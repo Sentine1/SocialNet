@@ -1,8 +1,5 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header'
-import Content from './components/Content/Content'
-import Dialog from './components/Dialogs/Dialogs'
 import News from './components/News/News'
 import Audio from './components/Audios/Audio'
 import Video from './components/Videos/Videos'
@@ -14,15 +11,16 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ContentContainer from "./components/Content/ContentContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
-function App(props) {
+function App() {
     return (<div className='app-wrapper'>
         <HeaderContainer/>
         <MenuContainer/>
         <div className='app-wrapper-content'>
             <Routes>
                 <Route path='/dialogs'
-                       element={<Dialog/>}/>
+                       element={<DialogsContainer/>}/>
                 <Route path='/profile/:userId?'
                        element={<ContentContainer/>}/>
                 <Route path='/news' element={<News/>}/>

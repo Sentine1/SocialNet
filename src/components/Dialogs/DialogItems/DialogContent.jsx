@@ -11,7 +11,7 @@ function DialogContent(props) {
         let text = newMessageElement.current.value;
         props.onChangeEvent(text);
     }
-    
+
     return (
         <div className={module.Content}>
             <div>

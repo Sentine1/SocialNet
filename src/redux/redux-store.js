@@ -11,7 +11,7 @@ let reducers = combineReducers({
     profilePage: ProfileReducer,
     FriendsData: FriendsReducer,
     UsersData: UsersReducer,
-    auth:AuthReducer
+    auth: AuthReducer
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));
