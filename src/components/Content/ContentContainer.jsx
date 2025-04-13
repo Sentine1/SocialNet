@@ -3,6 +3,7 @@ import Content from "./Content";
 import {connect} from "react-redux";
 import {getUserProfile} from "../../redux/ProfileReducer";
 import {NavLink, useLocation, useNavigate, useParams} from "react-router-dom";
+import {withAuthRedirect} from "../../hoc/AuthRedirect";
 
 class ContentContainer extends React.Component {
     componentDidMount() {
@@ -14,15 +15,14 @@ class ContentContainer extends React.Component {
     }
 
     render() {
-        if (!this.props.isAuth)
-            return <NavLink to={'/login'}/>;
         return (<Content {...this.props} profile={this.props.profile}/>)
     }
 }
 
+let AuthRedirectComponent = withAuthRedirect(ContentContainer);
+
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
-    isAuth: state.auth.isAuth
 });
 
 ///v6 Придётся писать самому
@@ -42,4 +42,4 @@ function withRouter(Component) {
     return ComponentWithRouterProp;
 }
 
-export default connect(mapStateToProps, {getUserProfile})(withRouter(ContentContainer));
+export default connect(mapStateToProps, {getUserProfile})(withRouter(AuthRedirectComponent));
