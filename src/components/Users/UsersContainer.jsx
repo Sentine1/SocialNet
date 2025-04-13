@@ -9,6 +9,7 @@ import {
 import React from "react";
 import Users from "./Users";
 import Preloader from "../../assets/Preloader";
+import {compose} from "redux";
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
@@ -56,12 +57,12 @@ const mapStateToProps = (state) => {
     }
 };
 
-const UsersContainer = connect(mapStateToProps, {
-    follow: followSuccess,
-    unfollow: unfollowSuccess,
-    setCurrentPage,
-    toggleFollowingProgress,
-    getUsers
-})(UsersAPIComponent);
-
-export default UsersContainer
+export default compose(
+    connect(mapStateToProps, {
+        follow: followSuccess,
+        unfollow: unfollowSuccess,
+        setCurrentPage,
+        toggleFollowingProgress,
+        getUsers
+    })
+)(UsersAPIComponent);
